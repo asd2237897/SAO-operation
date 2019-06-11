@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            transition:all 1s ease;
+        }
+        #map {
+            width: 1000px;
+            height: 600px;
+            margin: 0 auto;
+            background: url('./images/bg.png') no-repeat center left;
+            cursor:url(./images/cursor.png),auto;
+            transform-style: preserve-3d;
+            position: fixed;
+            left: 0;
+            right: 0;
+        }
+        .transition{
+            transition:all 2s ease;
+        }
+        
+        img{
+            width: 100%;
+            transform-origin: center bottom;
+            transform:rotateX(0deg);
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="游戏开始">
+    <div id="map"></div>
+    <script src="./js/bazi.js"></script>
+    <script src="./js/game.js"></script>
+    <script src="./js/common.js"></script>
+    <script>
+        //找到map
+        var map = document.querySelector('#map');
+        //开始游戏
+        var Game = new Game(map);
+        Game.start()
+    </script>
+</body>
+
+</html>
